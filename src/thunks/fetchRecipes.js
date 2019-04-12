@@ -7,16 +7,11 @@ export const fetchRecipes = (ingredients) => {
       const mappedIngredients = ingredients.map(ingredient => {
         return `&allowedIngredient[]=${ingredient}`
       })
-      const newIngredients = mappedIngredients.join('')
-      const url = `http://api.yummly.com/v1/api/recipes?_app_id=${APP_ID}&_app_key=${API_KEY}${newIngredients}`
-      console.log(url)
+      const queryIngredients = mappedIngredients.join('')
+      const url = `http://api.yummly.com/v1/api/recipes?_app_id=${APP_ID}&_app_key=${API_KEY}${queryIngredients}`
       const response = await fetch(url)
-      // if (!response.ok) {
-      //   console.log(error)
-      // } else {
-        const data = await response.json()
-        console.log(data)
-      // }
+      const recipes = await response.json()
+      return recipes
     } catch(error) {
       console.log(error)
     }
