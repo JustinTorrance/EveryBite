@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 
 export class IngredientsForm extends Component {
@@ -20,7 +21,12 @@ export class IngredientsForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    
+    const validIngredients = Object.values(this.state).filter(ingredient => {
+      if (ingredient !== '') {
+        return ingredient
+      }
+    })
+    console.log(validIngredients)
   }
 
   render() {
@@ -32,7 +38,7 @@ export class IngredientsForm extends Component {
           <p>Simply enter the ingredients you have on hand,</p>
           <p>and we'll find recipes that include all of your ingredients.</p>
         </div>
-        <form className='ingredients-form'>
+        <form className='ingredients-form' onSubmit={(e) => this.handleSubmit(e)}>
           <input 
             value={ingredient1}
             name='ingredient1'
@@ -63,7 +69,7 @@ export class IngredientsForm extends Component {
             onChange={this.handleChange}
             placeholder='enter an ingredient'
           />
-          <button type='submit' onSubmit={(e) => handleSubmit(e)}>Find Recipes</button>
+          <button type='submit'>Find Recipes</button>
         </form>
       </section>
     )
@@ -71,7 +77,7 @@ export class IngredientsForm extends Component {
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-  
+
 })
 
 export default connect (null, mapDispatchToProps)(IngredientsForm)

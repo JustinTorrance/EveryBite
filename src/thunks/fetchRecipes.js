@@ -3,7 +3,9 @@ const APP_ID = `${process.env.REACT_APP_APP_ID}`
 
 export const fetchRecipes = async (ingredients) => {
   try {
-    const url = `http://api.yummly.com/v1/api/recipes?_app_id=${APP_ID}&_app_key=${API_KEY}&allowedIngredient`
+    //map over ingredients
+    //return=[]ingredient
+    const url = `http://api.yummly.com/v1/api/recipes?_app_id=${APP_ID}&_app_key=${API_KEY}&allowedIngredient${mappedIngredients}`
     const response = await fetch(url)
     if (!response.ok) {
       console.log(error)
