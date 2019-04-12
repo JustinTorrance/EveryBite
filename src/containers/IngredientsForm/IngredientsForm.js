@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 export class IngredientsForm extends Component {
   constructor() {
     super()
@@ -15,6 +16,11 @@ export class IngredientsForm extends Component {
   handleChange = (e) => {
     const { name, value } = e.target
     this.setState({ [name]: value})
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    
   }
 
   render() {
@@ -57,11 +63,15 @@ export class IngredientsForm extends Component {
             onChange={this.handleChange}
             placeholder='enter an ingredient'
           />
-
+          <button type='submit' onSubmit={(e) => handleSubmit(e)}>Find Recipes</button>
         </form>
       </section>
     )
   }
 }
 
-export default IngredientsForm
+export const mapDispatchToProps = (dispatch) => ({
+  
+})
+
+export default connect (null, mapDispatchToProps)(IngredientsForm)
