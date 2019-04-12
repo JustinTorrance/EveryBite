@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { fetchRecipes } from '../../thunks/fetchRecipes'
 
 
 export class IngredientsForm extends Component {
@@ -21,12 +22,12 @@ export class IngredientsForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const validIngredients = Object.values(this.state).filter(ingredient => {
+    const ingredients = Object.values(this.state).filter(ingredient => {
       if (ingredient !== '') {
         return ingredient
       }
     })
-    console.log(validIngredients)
+    this.props.fetchRecipes(ingredients)
   }
 
   render() {
@@ -77,7 +78,7 @@ export class IngredientsForm extends Component {
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-
+  fetchRecipes: (ingredients) => dispatch(fetchRecipes(ingredients))
 })
 
 export default connect (null, mapDispatchToProps)(IngredientsForm)
