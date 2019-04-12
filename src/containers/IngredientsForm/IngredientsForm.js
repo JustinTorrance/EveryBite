@@ -20,7 +20,7 @@ export class IngredientsForm extends Component {
   render() {
     const { ingredient1, ingredient2, ingredient3, ingredient4, ingredient5 } = this.state
     return(
-      <form>
+      <form className='ingredients-form'>
         <input 
           value={ingredient1}
           name='ingredient1'
