@@ -1,19 +1,21 @@
 import React, { Component } from 'react'
-import {uid} from 'react-uid'
+// import { uid } from 'uid'
 import { connect } from 'react-redux'
-// import Card from ''
+import Card from '../../components/Card/Card'
+import shortid from 'shortid'
 
 export class CardContainer extends Component {
-
+  
   render() {
-
-    const displayCards = this.props.recipes.map(recipe => {
-      <Card {...recipe} key={uid()} />
-    })
-
+    
+    let displayCards = this.props.recipes.map(recipe => {
+      return <Card {...recipe} key={shortid.generate()} />
+     })
+    
     return(
       <div>
         {displayCards}
+        CardContainer
       </div>
     )
   }
