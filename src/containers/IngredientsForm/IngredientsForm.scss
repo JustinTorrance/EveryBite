@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background:#7f7f7f;
+  background:rgba(255,255,255,0.3);
 }
 
 .ingredients-form {
@@ -15,4 +17,6 @@ input {
   height: 25px;
   font-size: .9rem;
 }
+
+
 

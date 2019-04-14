@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchRecipes } from '../../thunks/fetchRecipes'
-
+import Button from '@material-ui/core/Button'
+import Input from '@material-ui/core/Input';
 
 export class IngredientsForm extends Component {
   constructor() {
@@ -33,6 +34,7 @@ export class IngredientsForm extends Component {
   render() {
     const { ingredient1, ingredient2, ingredient3, ingredient4, ingredient5 } = this.state
     return(
+      
       <section className='ingredient-input-section'>
         <div className='instructions'>
           <p>It's easy to begin!</p>
@@ -40,37 +42,37 @@ export class IngredientsForm extends Component {
           <p>and we'll find recipes that include all of your ingredients.</p>
         </div>
         <form className='ingredients-form' onSubmit={(e) => this.handleSubmit(e)}>
-          <input 
+          <Input 
             value={ingredient1}
             name='ingredient1'
             onChange={this.handleChange}
             placeholder='enter an ingredient'
           />
-          <input 
+          <Input 
             value={ingredient2}
             name='ingredient2'
             onChange={this.handleChange}
             placeholder='enter an ingredient'
           />
-          <input 
+          <Input 
             value={ingredient3}
             name='ingredient3'
             onChange={this.handleChange}
             placeholder='enter an ingredient'
           />
-          <input 
+          <Input 
             value={ingredient4}
             name='ingredient4'
             onChange={this.handleChange}
             placeholder='enter an ingredient'
           />
-          <input 
+          <Input 
             value={ingredient5}
             name='ingredient5'
             onChange={this.handleChange}
             placeholder='enter an ingredient'
           />
-          <button type='submit'>Find Recipes</button>
+          <Button type='submit' variant="contained" color="primary">Find Recipes</Button>
         </form>
       </section>
     )

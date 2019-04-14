@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import { uid } from 'uid'
 import { connect } from 'react-redux'
-import Card from '../../components/Card/Card'
+import RecipeCard from '../../components/RecipeCard/RecipeCard'
 import shortid from 'shortid'
 
 export class CardContainer extends Component {
@@ -9,13 +9,12 @@ export class CardContainer extends Component {
   render() {
     
     let displayCards = this.props.recipes.map(recipe => {
-      return <Card {...recipe} key={shortid.generate()} />
+      return <RecipeCard {...recipe} key={shortid.generate()} />
      })
     
     return(
       <div>
         {displayCards}
-        CardContainer
       </div>
     )
   }
