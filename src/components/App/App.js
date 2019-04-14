@@ -6,8 +6,12 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-        <IngredientsForm />
-        <CardContainer />
+        <div className='input-container'>
+            <IngredientsForm />
+        </div>
+        <div className='recipe-container'>
+            <CardContainer />
+        </div>
       </div>
     );
   }

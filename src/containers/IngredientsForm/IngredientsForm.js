@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchRecipes } from '../../thunks/fetchRecipes'
+import Button from '@material-ui/core/Button'
+import Input from '@material-ui/core/Input';
+import Typography from '@material-ui/core/Typography'
 
 
 export class IngredientsForm extends Component {
@@ -17,7 +20,7 @@ export class IngredientsForm extends Component {
 
   handleChange = (e) => {
     const { name, value } = e.target
-    this.setState({ [name]: value})
+    this.setState({ [name]: value })
   }
 
   handleSubmit = (e) => {
@@ -33,44 +36,50 @@ export class IngredientsForm extends Component {
   render() {
     const { ingredient1, ingredient2, ingredient3, ingredient4, ingredient5 } = this.state
     return(
+      
       <section className='ingredient-input-section'>
-        <div className='instructions'>
-          <p>It's easy to begin!</p>
-          <p>Simply enter the ingredients you have on hand,</p>
-          <p>and we'll find recipes that include all of your ingredients.</p>
-        </div>
+        <h1 className='title'>Every<span>Bite</span></h1>
+        <Typography variant="title" color="inherit">
+          <div className='instructions'>
+            <p>It's easy to begin!</p>
+            <p>Simply enter the ingredients you have on hand,</p>
+            <p>and we'll find recipes that include all of your ingredients.</p>
+          </div>
+        </Typography>
         <form className='ingredients-form' onSubmit={(e) => this.handleSubmit(e)}>
-          <input 
+          <Input 
             value={ingredient1}
             name='ingredient1'
             onChange={this.handleChange}
             placeholder='enter an ingredient'
           />
-          <input 
+          <Input 
             value={ingredient2}
             name='ingredient2'
             onChange={this.handleChange}
             placeholder='enter an ingredient'
           />
-          <input 
+          <Input 
             value={ingredient3}
             name='ingredient3'
             onChange={this.handleChange}
             placeholder='enter an ingredient'
           />
-          <input 
+          <Input 
             value={ingredient4}
             name='ingredient4'
             onChange={this.handleChange}
             placeholder='enter an ingredient'
           />
-          <input 
+          <Input 
             value={ingredient5}
             name='ingredient5'
             onChange={this.handleChange}
             placeholder='enter an ingredient'
           />
-          <button type='submit'>Find Recipes</button>
+          <div className='submit-btn'>
+            <Button type='submit' variant="contained" color="primary">Find Recipes</Button>
+          </div>
         </form>
       </section>
     )
