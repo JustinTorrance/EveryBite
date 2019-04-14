@@ -13,7 +13,7 @@ export class CardContainer extends Component {
      })
     
     return(
-      <div>
+      <div className='card-container'>
         {displayCards}
       </div>
     )

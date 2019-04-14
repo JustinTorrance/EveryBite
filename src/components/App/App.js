@@ -10,9 +10,7 @@ export class App extends Component {
             <IngredientsForm />
         </div>
         <div className='recipe-container'>
-          {/* <Typography variant="title" color="inherit"> */}
             <CardContainer />
-          {/* </Typography> */}
         </div>
       </div>
     );

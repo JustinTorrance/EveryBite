@@ -11,9 +11,16 @@
   justify-content: center;
 }
 
+.recipe-container {
+  // overflow: scroll;
+  // height: 1fr;
+}
+
 .App {
   display: grid;
   grid-template-rows: 1fr 1fr;
   justify-items: center;
   align-items: center;
+  height: 100vh;
+  overflow: scroll;
 }
