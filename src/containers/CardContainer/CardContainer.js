@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import { uid } from 'uid'
 import { connect } from 'react-redux'
 import RecipeCard from '../../components/RecipeCard/RecipeCard'
 import shortid from 'shortid'

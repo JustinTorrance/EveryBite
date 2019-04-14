@@ -6,24 +6,26 @@ import Button from '@material-ui/core/Button'
 const RecipeCard = ({name, id, image, ingredients, time}) => {
 
  const mappedIngredients = ingredients.map(ingredient => {
-   return <p className='ingredient-pt'>{ingredient}</p>
+   return <p className='ingredient-p'>{ingredient}</p>
  })
 
  const minutes = parseInt(time) / 60
 
   return(
-      <article>
+      <article className='card'>
         <h3 className='recipe-name'>{name}</h3>
         <p>Time: {minutes} minutes</p>
-        <img src={image} width='200' />
+        <img src={image} className='img' />
         <div className='ingredients-div'>
-          Ingredients: {mappedIngredients}
+          <span className='ingredient-label'>Ingredients:</span> {mappedIngredients}
         </div>
-        <CardActions>
-          <Button size="small" color="primary" href={`www.google.com`} target="_blank">
-              More Info
-          </Button>
-        </CardActions>
+        <div className='info-btn'>
+          <CardActions>
+            <Button size="small" color="primary" href={`www.google.com`} target="_blank">
+                More Info
+            </Button>
+          </CardActions>
+        </div>
       </article>
   )
 }
