@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { fetchRecipes } from '../../thunks/fetchRecipes'
 import Button from '@material-ui/core/Button'
 import Input from '@material-ui/core/Input';
+import Typography from '@material-ui/core/Typography'
+
 
 export class IngredientsForm extends Component {
   constructor() {
@@ -18,7 +20,7 @@ export class IngredientsForm extends Component {
 
   handleChange = (e) => {
     const { name, value } = e.target
-    this.setState({ [name]: value})
+    this.setState({ [name]: value })
   }
 
   handleSubmit = (e) => {
@@ -36,11 +38,14 @@ export class IngredientsForm extends Component {
     return(
       
       <section className='ingredient-input-section'>
-        <div className='instructions'>
-          <p>It's easy to begin!</p>
-          <p>Simply enter the ingredients you have on hand,</p>
-          <p>and we'll find recipes that include all of your ingredients.</p>
-        </div>
+        <h1 className='title'>Every<span>Bite</span></h1>
+        <Typography variant="title" color="inherit">
+          <div className='instructions'>
+            <p>It's easy to begin!</p>
+            <p>Simply enter the ingredients you have on hand,</p>
+            <p>and we'll find recipes that include all of your ingredients.</p>
+          </div>
+        </Typography>
         <form className='ingredients-form' onSubmit={(e) => this.handleSubmit(e)}>
           <Input 
             value={ingredient1}
@@ -72,7 +77,9 @@ export class IngredientsForm extends Component {
             onChange={this.handleChange}
             placeholder='enter an ingredient'
           />
-          <Button type='submit' variant="contained" color="primary">Find Recipes</Button>
+          <div className='submit-btn'>
+            <Button type='submit' variant="contained" color="primary">Find Recipes</Button>
+          </div>
         </form>
       </section>
     )

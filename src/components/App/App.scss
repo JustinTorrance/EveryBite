@@ -5,7 +5,15 @@
   box-sizing: border-box;
 }
 
+.input-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .App {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
 }
