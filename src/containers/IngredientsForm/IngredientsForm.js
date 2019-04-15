@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button'
 import Input from '@material-ui/core/Input'
 import Typography from '@material-ui/core/Typography'
 import { withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 
 export class IngredientsForm extends Component {
@@ -44,7 +45,7 @@ export class IngredientsForm extends Component {
         <Typography variant="title" color="inherit">
           <div className='instructions'>
             <p>It's easy to begin!</p>
-            <p>Simply enter the ingredients you have on hand</p>
+            <p>Simply enter the ingredients you have on hand,</p>
             <p>We'll find recipes that include all of your ingredients.</p>
           </div>
         </Typography>
@@ -86,6 +87,10 @@ export class IngredientsForm extends Component {
       </section>
     )
   }
+}
+
+IngredientsForm.propTypes = {
+  fetchRecipes: PropTypes.func.isRequired
 }
 
 export const mapDispatchToProps = (dispatch) => ({
