@@ -21,7 +21,7 @@ const RecipeCard = ({name, id, image, ingredients, time}) => {
         </div>
         <div className='info-btn'>
           <CardActions>
-            <Button size="small" color="primary" href={`www.google.com`} target="_blank">
+            <Button size="small" color="primary" href={`https://www.yummly.com/recipe/${id}`} target="_blank">
                 More Info
             </Button>
           </CardActions>
