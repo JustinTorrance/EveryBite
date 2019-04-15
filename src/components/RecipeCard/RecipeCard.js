@@ -1,12 +1,13 @@
 import React from 'react'
 import CardActions from '@material-ui/core/CardActions'
 import Button from '@material-ui/core/Button'
+import shortid from 'shortid'
 
 
 const RecipeCard = ({name, id, image, ingredients, time}) => {
 
  const mappedIngredients = ingredients.map(ingredient => {
-   return <p className='ingredient-p'>{ingredient}</p>
+   return <p className='ingredient-p' key={shortid.generate()}>{ingredient}</p>
  })
 
  const minutes = parseInt(time) / 60

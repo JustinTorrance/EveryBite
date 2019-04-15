@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchRecipes } from '../../thunks/fetchRecipes'
 import Button from '@material-ui/core/Button'
-import Input from '@material-ui/core/Input';
+import Input from '@material-ui/core/Input'
 import Typography from '@material-ui/core/Typography'
+import { Link, withRouter } from 'react-router-dom'
 
 
 export class IngredientsForm extends Component {
@@ -25,6 +26,8 @@ export class IngredientsForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    const { history } = this.props
+    history.push('/recipes')
     const ingredients = Object.values(this.state).filter(ingredient => {
       if (ingredient !== '') {
         return ingredient
@@ -78,7 +81,9 @@ export class IngredientsForm extends Component {
             placeholder='enter an ingredient'
           />
           <div className='submit-btn'>
-            <Button type='submit' variant="contained" color="primary">Find Recipes</Button>
+            {/* <Link to='/recipes'> */}
+              <Button type='submit' variant="contained" color="primary">Find Recipes</Button>
+            {/* </Link> */}
           </div>
         </form>
       </section>
@@ -90,4 +95,4 @@ export const mapDispatchToProps = (dispatch) => ({
   fetchRecipes: (ingredients) => dispatch(fetchRecipes(ingredients))
 })
 
-export default connect (null, mapDispatchToProps)(IngredientsForm)
+export default withRouter(connect (null, mapDispatchToProps)(IngredientsForm))
