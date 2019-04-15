@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import './containers/CardContainer/CardContainer.scss';
 @import './components/RecipeCard/RecipeCard.scss';
+@import './components/Loading/Loading.scss';
 
 body {
   background-image: url("./assets/board.jpg");
