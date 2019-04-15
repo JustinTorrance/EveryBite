@@ -4,7 +4,7 @@ import { fetchRecipes } from '../../thunks/fetchRecipes'
 import Button from '@material-ui/core/Button'
 import Input from '@material-ui/core/Input'
 import Typography from '@material-ui/core/Typography'
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 
 export class IngredientsForm extends Component {

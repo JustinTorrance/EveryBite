@@ -4,7 +4,7 @@ export const Loading = () => {
 
   return(
     <section className='loading-section'>
-      <span class="loading__anim"></span>
+      <span className="loading__anim"></span>
     </section>
   )
 }

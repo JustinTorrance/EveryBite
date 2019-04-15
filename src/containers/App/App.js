@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import IngredientsForm from '../../containers/IngredientsForm/IngredientsForm'
-import CardContainer from '../../containers/CardContainer/CardContainer'
+import IngredientsForm from '../IngredientsForm/IngredientsForm'
+import CardContainer from '../CardContainer/CardContainer'
 import { Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { Loading } from '../Loading/Loading'
+import { Loading } from '../../components/Loading/Loading'
+import PropTypes from 'prop-types'
 
 export class App extends Component {
   render() {
@@ -20,8 +21,12 @@ export class App extends Component {
   }
 }
 
+App.propTypes = {
+  isLoading: PropTypes.bool
+}
+
 export const mapStateToProps = (state) => ({
-  isLoading: state.isLoading
+  isLoading: state.isLoading.isRequired
 })
 
 export default connect(mapStateToProps)(App)

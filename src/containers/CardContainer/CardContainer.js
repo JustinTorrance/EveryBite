@@ -23,6 +23,7 @@ export class CardContainer extends Component {
         <div className='card-container'>
           {displayCards}
         </div>
+        {!this.props.recipes.length && <h3 className='no-recipes'>There are no recipes to show</h3>}
       </section>
     )
   }

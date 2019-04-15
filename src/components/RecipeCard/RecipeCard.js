@@ -15,7 +15,7 @@ const RecipeCard = ({name, id, image, ingredients, time}) => {
       <article className='card'>
         <h3 className='recipe-name'>{name}</h3>
         <p className='time-p'>Time: {minutes} minutes</p>
-        <img src={image} className='img' />
+        <img src={image} className='img' alt={`${name}`} />
         <div className='ingredients-div'>
           <span className='ingredient-label'>Ingredients:</span> {mappedIngredients}
         </div>
