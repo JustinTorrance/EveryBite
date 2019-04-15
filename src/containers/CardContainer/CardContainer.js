@@ -24,7 +24,7 @@ export class CardContainer extends Component {
         <div className='card-container'>
           {displayCards}
         </div>
-        {!this.props.recipes.length && <h3 className='no-recipes'>There are no recipes to show</h3>}
+        {!this.props.recipes.length && !this.props.isLoading ? <h3 className='no-recipes'>There are no recipes to show</h3> : undefined}
       </section>
     )
   }
@@ -35,7 +35,8 @@ CardContainer.propTypes = {
 }
 
 export const mapStateToProps = (state) => ({
-  recipes: state.recipes
+  recipes: state.recipes,
+  isLoading: state.isLoading
 })
 
 export default connect(mapStateToProps)(CardContainer)
