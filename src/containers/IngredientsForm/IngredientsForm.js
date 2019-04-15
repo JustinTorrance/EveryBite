@@ -44,8 +44,8 @@ export class IngredientsForm extends Component {
         <Typography variant="title" color="inherit">
           <div className='instructions'>
             <p>It's easy to begin!</p>
-            <p>Simply enter the ingredients you have on hand,</p>
-            <p>and we'll find recipes that include all of your ingredients.</p>
+            <p>Simply enter the ingredients you have on hand</p>
+            <p>We'll find recipes that include all of your ingredients.</p>
           </div>
         </Typography>
         <form className='ingredients-form' onSubmit={(e) => this.handleSubmit(e)}>

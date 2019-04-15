@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import RecipeCard from '../../components/RecipeCard/RecipeCard'
 import shortid from 'shortid'
+import Button from '@material-ui/core/Button'
+import { Link } from 'react-router-dom'
 
 export class CardContainer extends Component {
   
@@ -12,9 +14,16 @@ export class CardContainer extends Component {
      })
     
     return(
-      <div className='card-container'>
-        {displayCards}
-      </div>
+      <section className='card-section'>
+        <div className='home-btn-div'>
+          <Link to='/'>
+            <Button type='submit' variant="contained" color="primary" className='home-btn'>Home</Button>
+          </Link>
+        </div>
+        <div className='card-container'>
+          {displayCards}
+        </div>
+      </section>
     )
   }
 }
