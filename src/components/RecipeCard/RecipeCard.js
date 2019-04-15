@@ -3,7 +3,6 @@ import CardActions from '@material-ui/core/CardActions'
 import Button from '@material-ui/core/Button'
 import shortid from 'shortid'
 
-
 const RecipeCard = ({name, id, image, ingredients, time}) => {
 
  const mappedIngredients = ingredients.map(ingredient => {

@@ -7,6 +7,8 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1 className='title'>Every<span>Bite</span></h1>
+
         {/* <div className='input-container'>
             <IngredientsForm />
         </div>

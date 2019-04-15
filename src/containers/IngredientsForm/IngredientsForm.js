@@ -41,7 +41,6 @@ export class IngredientsForm extends Component {
     return(
       
       <section className='ingredient-input-section'>
-        <h1 className='title'>Every<span>Bite</span></h1>
         <Typography variant="title" color="inherit">
           <div className='instructions'>
             <p>It's easy to begin!</p>
@@ -81,9 +80,7 @@ export class IngredientsForm extends Component {
             placeholder='enter an ingredient'
           />
           <div className='submit-btn'>
-            {/* <Link to='/recipes'> */}
-              <Button type='submit' variant="contained" color="primary">Find Recipes</Button>
-            {/* </Link> */}
+            <Button type='submit' variant="contained" color="primary">Find Recipes</Button>
           </div>
         </form>
       </section>
