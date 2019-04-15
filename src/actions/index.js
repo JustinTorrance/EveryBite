@@ -5,5 +5,5 @@ export const storeRecipes = (recipes) => ({
 
 export const isLoading = (boolean) => ({
   type: 'IS_LOADING',
-  boolean
+  isLoading: boolean
 })
