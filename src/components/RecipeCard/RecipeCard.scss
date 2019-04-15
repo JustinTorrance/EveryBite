@@ -1,6 +1,6 @@
 .card {
   background:#7f7f7f;
-  background:rgba(255,255,255,0.4);
+  background:rgba(255,255,255,0.5);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -8,6 +8,12 @@
   align-items: center;
   padding-top: 10px;
   font-family: 'Roboto', sans-serif;
+  padding: 10px 10px 0 10px;
+}
+
+.recipe-name {
+  text-align: center;
+  margin: 0 8px;
 }
 
 .img {
@@ -31,6 +37,18 @@
 .ingredient-label {
   font-weight: 900;
   font-size: 1.1rem;
+}
+
+.ingredient-p {
+  margin: 2px 0;
+}
+
+.recipe-name, .time-p {
+  margin: 5px 0;
+}
+
+.recipe-name {
+  font-size: 1.4rem;
 }
 
 

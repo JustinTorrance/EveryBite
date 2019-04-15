@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchRecipes } from '../../thunks/fetchRecipes'
 import Button from '@material-ui/core/Button'
-import Input from '@material-ui/core/Input';
+import Input from '@material-ui/core/Input'
 import Typography from '@material-ui/core/Typography'
+import { Link, withRouter } from 'react-router-dom'
 
 
 export class IngredientsForm extends Component {
@@ -25,6 +26,8 @@ export class IngredientsForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    const { history } = this.props
+    history.push('/recipes')
     const ingredients = Object.values(this.state).filter(ingredient => {
       if (ingredient !== '') {
         return ingredient
@@ -38,12 +41,11 @@ export class IngredientsForm extends Component {
     return(
       
       <section className='ingredient-input-section'>
-        <h1 className='title'>Every<span>Bite</span></h1>
         <Typography variant="title" color="inherit">
           <div className='instructions'>
             <p>It's easy to begin!</p>
-            <p>Simply enter the ingredients you have on hand,</p>
-            <p>and we'll find recipes that include all of your ingredients.</p>
+            <p>Simply enter the ingredients you have on hand</p>
+            <p>We'll find recipes that include all of your ingredients.</p>
           </div>
         </Typography>
         <form className='ingredients-form' onSubmit={(e) => this.handleSubmit(e)}>
@@ -90,4 +92,4 @@ export const mapDispatchToProps = (dispatch) => ({
   fetchRecipes: (ingredients) => dispatch(fetchRecipes(ingredients))
 })
 
-export default connect (null, mapDispatchToProps)(IngredientsForm)
+export default withRouter(connect (null, mapDispatchToProps)(IngredientsForm))
