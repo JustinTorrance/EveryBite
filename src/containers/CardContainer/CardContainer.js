@@ -4,6 +4,7 @@ import RecipeCard from '../../components/RecipeCard/RecipeCard'
 import shortid from 'shortid'
 import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 export class CardContainer extends Component {
   
@@ -23,13 +24,19 @@ export class CardContainer extends Component {
         <div className='card-container'>
           {displayCards}
         </div>
+        {!this.props.recipes.length && !this.props.isLoading ? <h3 className='no-recipes'>There are no recipes to show</h3> : undefined}
       </section>
     )
   }
 }
 
+CardContainer.propTypes = {
+  recipes: PropTypes.array.isRequired
+}
+
 export const mapStateToProps = (state) => ({
-  recipes: state.recipes
+  recipes: state.recipes,
+  isLoading: state.isLoading
 })
 
 export default connect(mapStateToProps)(CardContainer)

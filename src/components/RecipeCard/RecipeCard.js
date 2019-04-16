@@ -2,6 +2,7 @@ import React from 'react'
 import CardActions from '@material-ui/core/CardActions'
 import Button from '@material-ui/core/Button'
 import shortid from 'shortid'
+import PropTypes from 'prop-types'
 
 const RecipeCard = ({name, id, image, ingredients, time}) => {
 
@@ -15,7 +16,7 @@ const RecipeCard = ({name, id, image, ingredients, time}) => {
       <article className='card'>
         <h3 className='recipe-name'>{name}</h3>
         <p className='time-p'>Time: {minutes} minutes</p>
-        <img src={image} className='img' />
+        <img src={image} className='img' alt={`${name}`} />
         <div className='ingredients-div'>
           <span className='ingredient-label'>Ingredients:</span> {mappedIngredients}
         </div>
@@ -28,6 +29,14 @@ const RecipeCard = ({name, id, image, ingredients, time}) => {
         </div>
       </article>
   )
+}
+
+RecipeCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  time: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  ingredients: PropTypes.array.isRequired
 }
 
 export default RecipeCard
