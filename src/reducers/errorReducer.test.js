@@ -4,7 +4,7 @@ describe('errorReducer', () => {
 
   it('should return initial state', () => {
     const expected = ''
-    const result = errorReducer(undefined, '')
+    const result = errorReducer(undefined, {})
     expect(result).toEqual(expected)
   })
 
