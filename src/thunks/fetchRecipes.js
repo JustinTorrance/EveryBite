@@ -14,7 +14,7 @@ export const fetchRecipes = (ingredients) => {
       dispatch(isLoading(true))
       const response = await fetch(url)
       if (!response.ok) {
-        throw error
+        throw new Error(response.statusText)
       } else {
         const data = await response.json()
         const recipes = recipeCleaner(data)
