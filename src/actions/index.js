@@ -5,7 +5,7 @@ export const storeRecipes = (recipes) => ({
 
 export const isLoading = (boolean) => ({
   type: 'IS_LOADING',
-  isLoading: boolean
+  isLoading: boolean 
 })
 
 export const hasErrored = (message) => ({
