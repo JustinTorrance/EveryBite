@@ -1,6 +1,7 @@
 import { storeRecipes, isLoading, hasErrored } from '../actions'
 import { fetchRecipes } from './fetchRecipes'
 import { recipeCleaner } from '../cleaner'
+jest.mock('../cleaner')
 
 describe('fetchRecipes', () => {
   let mockUrl
@@ -29,7 +30,7 @@ describe('fetchRecipes', () => {
     expect(mockDispatch).toHaveBeenCalledWith(hasErrored('Something went wrong'))
   })
 
-  it.skip('should dispatch isLoading(false) if the response is ok', async () => {
+  it('should dispatch isLoading(false) if the response is ok', async () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
       json: () => Promise.resolve([{name: 'curry'}])
@@ -39,12 +40,13 @@ describe('fetchRecipes', () => {
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(false))
   })
 
-  it.skip('should dispatch storeRecipes if the response is ok', async () => {
+  it('should dispatch storeRecipes if the response is ok', async () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-      ok: true
+      ok: true,
+      json: () => Promise.resolve([{name: 'curry'}])
     }))
     const thunk = fetchRecipes(mockIngredients)
     await thunk(mockDispatch)
-    expect(mockDispatch).toHaveBeenCalledWith(storeRecipes(mockIngredients))
+    expect(mockDispatch).toHaveBeenCalledWith(storeRecipes())
   })
 })
