@@ -26,9 +26,10 @@ describe('IngredientsForm', () => {
     expect(wrapper.state('ingredient1')).toEqual('tomato')
   })
 
-  it.skip('should use handleSubmit to call fetchRecipes', () => {
+  it('should use handleSubmit to call fetchRecipes', () => {
     const wrapper = shallow(<IngredientsForm 
                       fetchRecipes={jest.fn()}
+                      history={{push: jest.fn()}}
                     />)
     const mockedEvent = {
       preventDefault: jest.fn()
