@@ -7,7 +7,6 @@ import Typography from '@material-ui/core/Typography'
 import { withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-
 export class IngredientsForm extends Component {
   constructor() {
     super()
