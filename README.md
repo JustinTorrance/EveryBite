@@ -21,6 +21,6 @@ In your terminal:
  - Enzyme, Jest
 
 ### Author
-Justin Torrance
-Github: https://github.com/JustinTorrance
+Justin Torrance  
+Github: https://github.com/JustinTorrance  
 LinkedIn: https://www.linkedin.com/in/justintorrance/
