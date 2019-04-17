@@ -1,10 +1,9 @@
-import { App, mapStateToProps} from './App'
+import { CardContainer, mapStateToProps } from './CardContainer'
 
-describe('App', () => {
+describe('CardContainer', () => {
   
   describe('mapStateToProps', () => {
-    
-    it('should return an object with isLoading and error', () => {
+    it('should return an object with isLoading and recipes', () => {
       const mockState = {
         isLoading: false,
         error: 'Something went wrong',
@@ -12,10 +11,11 @@ describe('App', () => {
       }
       const expected = {
         isLoading: false,
-        error: 'Something went wrong'
+        recipes: [{name: 'curry'}]
       }
       const mappedProps = mapStateToProps(mockState)
       expect(mappedProps).toEqual(expected)
     })
   })
+  
 })
