@@ -19,3 +19,8 @@ In your terminal:
  - Fetch API
  - Yummly API
  - Enzyme, Jest
+
+### Author
+Justin Torrance
+Github: https://github.com/JustinTorrance
+LinkedIn: https://www.linkedin.com/in/justintorrance/
