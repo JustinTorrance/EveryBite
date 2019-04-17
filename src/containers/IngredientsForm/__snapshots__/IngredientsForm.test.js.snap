@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IngredientsForm should match the snapshot 1`] = `
+"<section className=\\"ingredient-input-section\\">
+  <WithStyles(Typography) variant=\\"title\\" color=\\"inherit\\">
+    <div className=\\"instructions\\">
+      <p>
+        It&#39;s easy to begin!
+      </p>
+      <p>
+        Simply enter the ingredients you have on hand,
+      </p>
+      <p>
+        We&#39;ll find recipes that include all of your ingredients.
+      </p>
+    </div>
+  </WithStyles(Typography)>
+  <form className=\\"ingredients-form\\" onSubmit={[Function: onSubmit]}>
+    <WithStyles(Input) value=\\"\\" name=\\"ingredient1\\" onChange={[Function]} placeholder=\\"enter an ingredient\\" />
+    <WithStyles(Input) value=\\"\\" name=\\"ingredient2\\" onChange={[Function]} placeholder=\\"enter an ingredient\\" />
+    <WithStyles(Input) value=\\"\\" name=\\"ingredient3\\" onChange={[Function]} placeholder=\\"enter an ingredient\\" />
+    <WithStyles(Input) value=\\"\\" name=\\"ingredient4\\" onChange={[Function]} placeholder=\\"enter an ingredient\\" />
+    <WithStyles(Input) value=\\"\\" name=\\"ingredient5\\" onChange={[Function]} placeholder=\\"enter an ingredient\\" />
+    <div className=\\"submit-btn\\">
+      <WithStyles(Button) type=\\"submit\\" variant=\\"contained\\" color=\\"primary\\">
+        Find Recipes
+      </WithStyles(Button)>
+    </div>
+  </form>
+</section>"
+`;

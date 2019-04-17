@@ -1,7 +1,13 @@
+import React from 'react';
+import { shallow } from 'enzyme';
 import { IngredientsForm, mapDispatchToProps, mapsta } from './IngredientsForm'
 jest.mock('../../thunks/fetchRecipes')
 
 describe('IngredientsForm', () => {
+  const wrapper = shallow(<IngredientsForm />);
+    it('should match the snapshot', () => {
+      expect(wrapper.debug()).toMatchSnapshot();
+    });
 
   describe('mapDispatchToProps', () => {
     it('should call mockDispatch when using a function from mapDispatchToProps', () => {
