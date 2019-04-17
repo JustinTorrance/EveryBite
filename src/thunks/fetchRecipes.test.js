@@ -31,7 +31,8 @@ describe('fetchRecipes', () => {
 
   it.skip('should dispatch isLoading(false) if the response is ok', async () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-      ok: true
+      ok: true,
+      json: () => Promise.resolve([{name: 'curry'}])
     }))
     const thunk = fetchRecipes(mockIngredients)
     await thunk(mockDispatch)

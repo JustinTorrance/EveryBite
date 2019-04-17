@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardContainer should match the snapshot 1`] = `
+"<section className=\\"card-section\\">
+  <div className=\\"home-btn-div\\">
+    <Link to=\\"/\\">
+      <WithStyles(Button) type=\\"submit\\" variant=\\"contained\\" color=\\"primary\\" className=\\"home-btn\\">
+        Home
+      </WithStyles(Button)>
+    </Link>
+  </div>
+  <div className=\\"card-container\\">
+    <RecipeCard name=\\"curry\\" />
+  </div>
+</section>"
+`;
