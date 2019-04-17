@@ -1,6 +1,15 @@
+import React from 'react';
+import { shallow } from 'enzyme';
 import { App, mapStateToProps} from './App'
 
 describe('App', () => {
+  const wrapper = shallow(<App />);
+  it('should match the snapshot', () => {
+    expect(wrapper.debug()).toMatchSnapshot();
+  });
+
+
+
   
   describe('mapStateToProps', () => {
     
