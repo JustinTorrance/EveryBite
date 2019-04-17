@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecipeCard should match the snapshot 1`] = `
+"<article className=\\"card\\">
+  <h3 className=\\"recipe-name\\">
+    curry
+  </h3>
+  <p className=\\"time-p\\">
+    Time: 
+    1
+     minutes
+  </p>
+  <img src=\\"image\\" className=\\"img\\" alt=\\"curry\\" />
+  <div className=\\"ingredients-div\\">
+    <span className=\\"ingredient-label\\">
+      Ingredients:
+    </span>
+     
+    <p className=\\"ingredient-p\\">
+      rice
+    </p>
+    <p className=\\"ingredient-p\\">
+      beans
+    </p>
+  </div>
+  <div className=\\"info-btn\\">
+    <WithStyles(CardActions)>
+      <WithStyles(Button) size=\\"small\\" color=\\"primary\\" href=\\"https://www.yummly.com/recipe/1\\" target=\\"_blank\\">
+        More Info
+      </WithStyles(Button)>
+    </WithStyles(CardActions)>
+  </div>
+</article>"
+`;

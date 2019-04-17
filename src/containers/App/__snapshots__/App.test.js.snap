@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot 1`] = `
+"<div className=\\"App\\">
+  <h1 className=\\"title\\">
+    Every
+    <span>
+      Bite
+    </span>
+  </h1>
+  <Switch>
+    <Route exact={true} path=\\"/\\" component={[Function: C]} />
+    <Route exact={true} path=\\"/recipes\\" component={{...}} />
+    <Route component={[Function: BadPath]} />
+  </Switch>
+</div>"
+`;

@@ -32,11 +32,11 @@ const RecipeCard = ({name, id, image, ingredients, time}) => {
 }
 
 RecipeCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  time: PropTypes.number.isRequired,
-  id: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  ingredients: PropTypes.array.isRequired
+  name: PropTypes.string,
+  time: PropTypes.number,
+  id: PropTypes.string,
+  image: PropTypes.string,
+  ingredients: PropTypes.array
 }
 
 export default RecipeCard
