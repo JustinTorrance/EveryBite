@@ -18,7 +18,6 @@ export const fetchRecipes = (ingredients) => {
       } else {
         const data = await response.json()
         const recipes = recipeCleaner(data)
-        console.log(recipes)
         dispatch(storeRecipes(recipes))
       }
       dispatch(isLoading(false))
