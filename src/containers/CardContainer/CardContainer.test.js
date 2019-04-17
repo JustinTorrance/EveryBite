@@ -4,10 +4,10 @@ import { shallow } from 'enzyme'
 
 describe('CardContainer', () => {
 
-  const wrapper = shallow(
-    <CardContainer 
-      recipes={[{name: 'curry'}]}
-    />);
+  const wrapper = shallow(<CardContainer 
+                            recipes={[{name: 'curry'}]}
+                          />)
+
   it('should match the snapshot', () => {
     expect(wrapper.debug()).toMatchSnapshot();
   });
